@@ -1,0 +1,14 @@
+- name: install multiple packages 
+  hosts: local 
+  connection: local 
+  become: true 
+  tasks:
+  - name: install multiple packages using loop 
+    ansible.builtin.package:
+      name: "{{ item }}"
+      state: present
+    loop:
+    - nginx 
+    - git 
+    - htop 
+    - python3
