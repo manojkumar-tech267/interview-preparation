@@ -1,0 +1,20 @@
+- name: shell vs command module 
+  hosts: local 
+  connection: local 
+  become: true 
+  tasks:
+  - name: working on redirection command 
+    ansible.builtin.shell: "echo 'Hello World' >> /tmp/output.txt"
+    register: shell_output 
+  
+  - name: printing shell output 
+    ansible.builtin.debug:
+      msg: "The registered shell output is {{ shell_output }}"
+  
+  - name: working on command operation 
+    ansible.builtin.command: "echo 'Hello World from command module'"
+    register: command_output
+  
+  - name: printing command output 
+    ansible.builtin.debug:
+      msg: "printing command output {{ command_output }}"
