@@ -1,0 +1,4 @@
+we can define environment variables through export keyword
+export TF_VAR_instance_type="t3.micro"
+unset TF_VAR_instance_type
+echo ${TF_VAR_instance_type}

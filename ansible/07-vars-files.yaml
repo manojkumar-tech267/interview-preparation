@@ -1,0 +1,10 @@
+- name: taking variable values from files 
+  hosts: local 
+  connection: local 
+  vars_files:
+  - my-info.yaml 
+  tasks:
+  - name: printing information 
+    ansible.builtin.debug:
+      msg: "My Name is {{ Name }}, I am working as a {{ Profession }}, I am from {{ HomeTown }} My Favourite Food is {{ FavouriteFood }} My Favourite Activity is {{ FavouriteActivity }}"
+

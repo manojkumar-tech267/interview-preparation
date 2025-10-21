@@ -1,0 +1,37 @@
+- name: conditions in ansible 
+  hosts: local 
+  connection: local 
+  vars:
+    Number: 25
+    age: 20
+    marks: 36
+  tasks:
+  - name: given number is greater than 100
+    ansible.builtin.debug:
+      msg: "Given {{ Number }} is greater than 100"
+    when: Number > 100
+  
+  - name: given number is less than 100
+    ansible.builtin.debug:
+      msg: "Given {{ Number }} is less than 100"
+    when: Number < 100
+  
+  - name: number is a even number 
+    ansible.builtin.debug:
+      msg: "Given number {{ Number }} is a even number" 
+    when: Number % 2 == 0 
+  
+  - name: number is a odd number 
+    ansible.builtin.debug:
+      msg: "Given number {{ Number }} is a odd number"
+    when: Number %2 != 0 
+  
+  - name: You have a vote eligibility 
+    ansible.builtin.debug:
+      msg: "You are eligible for vote"
+    when: age >= 18
+
+  - name: checking a person is pass or fail 
+    ansible.builtin.debug:
+        msg: "You are pass" 
+    when: marks >= 35  

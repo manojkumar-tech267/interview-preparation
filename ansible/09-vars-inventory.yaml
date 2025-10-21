@@ -1,0 +1,8 @@
+- name: variables from inventory 
+  hosts: local 
+  connection: local 
+  become: true 
+  tasks:
+  - name: printing my info 
+    ansible.builtin.debug:
+      msg: "My Name is {{ Name }}, I'm from {{ HomeTown }}, I'm working as a {{ Profession}}"
