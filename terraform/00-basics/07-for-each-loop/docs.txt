@@ -1,0 +1,3 @@
+for_each = var.instance_info 
+each.key 
+each.value
