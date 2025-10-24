@@ -18,6 +18,10 @@ variable "instance_type" {
     default = "t2.micro"
 }
 
+variable "instance_name" {
+    type = list(string)
+    default = ["cart","catalogue","user","dispatch","database"]
+}
 variable "sg_name" {
     type = string 
     default = "allow_tls"
@@ -25,10 +29,10 @@ variable "sg_name" {
 
 variable "sg_description" {
     type = string 
-    default = "This security group allows all traffic from internet"
+    default = "this security group allows all traffic from interent"
 }
 
-# ingress rules
+# ingress rules 
 variable "ingress_from_port" {
     type = number 
     default = 0
@@ -55,7 +59,7 @@ variable "ingress_ipv6_cidr_blocks" {
 }
 
 
-# egress rules
+# egress rules 
 variable "egress_from_port" {
     type = number 
     default = 0
@@ -80,3 +84,4 @@ variable "egress_ipv6_cidr_blocks" {
     type = list(string)
     default = ["::/0"]
 }
+

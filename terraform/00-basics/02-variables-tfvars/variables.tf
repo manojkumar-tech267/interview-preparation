@@ -28,7 +28,7 @@ variable "sg_description" {
     default = "This security group allows all traffic from internet"
 }
 
-# ingress rules
+# ingress rules 
 variable "ingress_from_port" {
     type = number 
     default = 0
@@ -54,8 +54,7 @@ variable "ingress_ipv6_cidr_blocks" {
     default = ["::/0"]
 }
 
-
-# egress rules
+# egress rules 
 variable "egress_from_port" {
     type = number 
     default = 0

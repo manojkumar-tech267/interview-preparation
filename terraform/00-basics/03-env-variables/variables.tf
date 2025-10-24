@@ -15,7 +15,7 @@ variable "ami_id" {
 
 variable "instance_type" {
     type = string 
-    default = "t2.micro"
+    # default = "t2.micro"
 }
 
 variable "sg_name" {
@@ -28,7 +28,7 @@ variable "sg_description" {
     default = "This security group allows all traffic from internet"
 }
 
-# ingress rules
+# ingress rules 
 variable "ingress_from_port" {
     type = number 
     default = 0
@@ -50,12 +50,11 @@ variable "ingress_cidr_blocks" {
 }
 
 variable "ingress_ipv6_cidr_blocks" {
-    type = list(string)
+    type = list(string) 
     default = ["::/0"]
 }
 
-
-# egress rules
+# egress rules 
 variable "egress_from_port" {
     type = number 
     default = 0
@@ -77,6 +76,6 @@ variable "egress_cidr_blocks" {
 }
 
 variable "egress_ipv6_cidr_blocks" {
-    type = list(string)
+    type = list(string) 
     default = ["::/0"]
 }

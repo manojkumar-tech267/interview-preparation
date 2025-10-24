@@ -1,6 +1,6 @@
 variable "project" {
     type = string 
-    default = "Roboshop"
+    default = "roboshop"
 }
 
 variable "environment" {
@@ -15,12 +15,12 @@ variable "ami_id" {
 
 variable "instance_type" {
     type = string 
-    default = "t2.micro"
+    #default = "t2.micro"
 }
 
 variable "sg_name" {
     type = string 
-    default = "allow_tls"
+    #default = "allow_tls"
 }
 
 variable "sg_description" {
@@ -28,7 +28,7 @@ variable "sg_description" {
     default = "This security group allows all traffic from internet"
 }
 
-# ingress rules
+# ingress rules 
 variable "ingress_from_port" {
     type = number 
     default = 0
@@ -55,7 +55,7 @@ variable "ingress_ipv6_cidr_blocks" {
 }
 
 
-# egress rules
+# egress rules 
 variable "egress_from_port" {
     type = number 
     default = 0

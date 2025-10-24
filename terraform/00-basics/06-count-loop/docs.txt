@@ -1,0 +1,5 @@
+I create instances through count loop
+I write one condition also if instance is database i will use t3.micro 
+else i will use t2.micro 
+I use length(instance_names) function
+I will use instance name variable type of variable is list

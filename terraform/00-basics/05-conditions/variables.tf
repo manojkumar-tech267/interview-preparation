@@ -5,7 +5,7 @@ variable "project" {
 
 variable "environment" {
     type = string 
-    default = "dev"
+    default = "prod"
 }
 
 variable "ami_id" {
@@ -51,7 +51,7 @@ variable "ingress_cidr_blocks" {
 
 variable "ingress_ipv6_cidr_blocks" {
     type = list(string)
-    default = ["::/0"]
+    default =["::/0"]
 }
 
 
@@ -78,5 +78,6 @@ variable "egress_cidr_blocks" {
 
 variable "egress_ipv6_cidr_blocks" {
     type = list(string)
-    default = ["::/0"]
+    default =["::/0"]
 }
+
