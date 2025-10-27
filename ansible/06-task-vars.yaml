@@ -1,0 +1,18 @@
+- name: task level variables 
+  hosts: local 
+  connection: local 
+  vars:
+    Name: "Manoj Kumar"
+    Profession: "Devops Engineer"
+    HomeTown: "Repalle"
+  tasks:
+  - name: printing my information 
+    vars:
+      Name: "Manoj"
+      HomeTown: "Bethapudi"
+    ansible.builtin.debug:
+      msg: "My name is {{ Name }}, I am working as a {{ Profession }}, I am from {{ HomeTown }}"
+  
+  - name: printing my original information 
+    ansible.builtin.debug:
+      msg: "My Name is {{ Name }}, I am working as a {{ Profession }}, I am from {{ HomeTown }}"

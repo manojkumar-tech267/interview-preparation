@@ -1,0 +1,7 @@
+- name: printing variable values from inventory 
+  hosts: frontend 
+  become: true 
+  tasks:
+  - name: printing my information 
+    ansible.builtin.debug:
+      msg: "My Name is {{ Name }}, I am working as a {{ Profession }}, I'm from {{ HomeTown }}"

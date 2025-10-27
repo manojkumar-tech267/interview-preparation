@@ -1,0 +1,20 @@
+- name: printing different data type values 
+  hosts: local 
+  connection: local 
+  become: true 
+  vars:
+    Tools:
+    - Ansible 
+    - Terraform 
+    - Docker 
+    - Kubernetes 
+    - GitHub Actions 
+    - Jenkins 
+    Known_tools:
+      configuration_management: "Ansible"
+      Infrastructure_management: "Terraform"
+      Containerazation: "Docker"
+  tasks:
+  - name: printing tools information 
+    ansible.builtin.debug:
+      msg: "{{ Tools}},  {{ Known_tools }}"

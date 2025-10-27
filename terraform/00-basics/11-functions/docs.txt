@@ -1,0 +1,3 @@
+List of function i used 
+merge
+length

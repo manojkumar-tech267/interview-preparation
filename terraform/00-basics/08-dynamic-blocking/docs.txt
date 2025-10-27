@@ -1,0 +1,8 @@
+create one variable ingress_ports   
+default = [{},{},{}]
+
+dynamic ""
+for_each = var.ingress_ports 
+content {
+    ingress.value["from_port"]
+}

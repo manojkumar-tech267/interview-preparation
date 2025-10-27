@@ -1,0 +1,60 @@
+- name: functions in ansible 
+  hosts: local 
+  connection: local 
+  become: true 
+  task:
+  - name: print server name if it is not available i print default server name
+    vars:
+      server: "database-server"
+    ansible.builtin.debug:
+      msg: 'The server is {{ server | default("Web server") }}'
+  
+  - name: print region name 
+    vars:
+      region: "us-east-1b"
+    ansible.builtin.debug:
+      msg: 'The region name is {{ region | default("us-east-1a") }}'
+  
+  - name: print names in list format
+    vars:
+      names: "Jeevan,Saida,Buchi,Kusvanth,Adarsh"
+    ansible.builtin.debug:
+      msg: "The names are {{ names | split(',') }}"
+  
+  - name: convert map to list 
+    vars:
+      info:
+        Name: "Manoj Kumar"
+        Profession: "Devops Engineer"
+        HomeTown: "Repalle"
+    ansible.builtin.debug:
+      msg: "I am printing in list format {{ info | dict2items }}"
+  
+  - name: convert list  to map 
+    vars:
+      tools:
+      - { Name: "Ansible", Purpose: "Configuration Management" }
+      - { Name: "Terraform", Purpose: "Infrastructure Management" }
+      - { Name: "Docker", Purpose: "Containerization" }
+    ansible.builtin.debug:
+      msg: "Tools and their purpose is {{ tools | items2dict }}"
+  
+  - name: convert to uppercase 
+    vars:
+      name: "manoj kumar"
+    ansible.builtin.debug:
+      msg: "My Name is {{ name | upper }}"
+  
+  - name: convert to lower case 
+    vars:
+      name: "MANOJ KUMAR"
+    ansible.builtin.debug:
+      msg: "My Name is {{ name | lower }}"
+  
+  - name: check ip address is valid or not 
+    vars:
+      ip: "256.256.256.256"
+    ansible.builtin.debug:
+      msg: "{{ ip | ansible.utils.ipaddr }}"
+  
+

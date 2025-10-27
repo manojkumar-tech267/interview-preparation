@@ -1,0 +1,32 @@
+- name: install, start, enable nginx 
+  hosts: frontend 
+  become: true 
+  tasks:
+  - name: install nginx 
+    ansible.builtin.package:
+      name: nginx 
+      state: present 
+  
+  - name: start and enable nginx 
+    ansible.builtin.service:
+      name: nginx 
+      state: started
+      enabled: yes 
+
+- name: install python 
+  hosts: frontend 
+  become: true 
+  tasks:
+  - name: install python 
+    ansible.builtin.package:
+      name: python3 
+      state: present 
+
+- name: install git 
+  hosts: frontend 
+  become: true 
+  tasks:
+  - name: install git 
+    ansible.builtin.package:
+      name: git 
+      state: present 
