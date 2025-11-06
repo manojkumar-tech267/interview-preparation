@@ -1,5 +1,6 @@
 module "aws_vpc" {
-    source = "../../modules/vpc"
+    #source = "../../modules/vpc"
+    source = "git::https://github.com/manojkumar-tech267/interview-preparation.git//terraform/01-modules/modules/vpc?ref=main"
     project = "roboshop"
     environment = "dev"
     public_subnet_cidrs = ["10.0.1.0/24","10.0.2.0/24"]
